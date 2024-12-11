@@ -23,7 +23,7 @@ namespace Tyuiu.BorkovNA.Sprint6.Task2.V22.Lib
         }
         public double F(int x)
         {
-            return Math.Round(Math.Sin(x) / (x - 1.2) + Math.Cos(x) * (7 * x) - 2, 2);
+            return Math.Round((2*x-3) / ( Math.Cos(x) + x)  +5 , 2);
         }
     }
 }
