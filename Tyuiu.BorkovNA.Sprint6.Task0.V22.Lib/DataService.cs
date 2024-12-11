@@ -6,7 +6,7 @@ namespace Tyuiu.BorkovNA.Sprint6.Task0.V22.Lib
     {
         public double Calculate(int x)
         {
-            return Math.Round (0.7 * Math.Pow(x, 3) + 1.52 * Math.Pow(x, 3),3);
+            return Math.Round ((0.7 * Math.Pow(x, 3)) + (1.52 * Math.Pow(x, 2)),3);
         }
     }
 }
