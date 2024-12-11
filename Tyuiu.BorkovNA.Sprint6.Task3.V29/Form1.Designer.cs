@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             groupBoxMain_BNA = new GroupBox();
-            pictureBoxCondit = new PictureBox();
             groupBoxRes_BNA = new GroupBox();
-            dataGridView1 = new DataGridView();
+            GridRes = new DataGridView();
             X = new DataGridViewTextBoxColumn();
             FX = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
@@ -40,15 +39,25 @@
             labelRes_BNA = new Label();
             buttonPush = new Button();
             buttonWho_BNA = new Button();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            textBox5 = new TextBox();
+            textBox6 = new TextBox();
             groupBoxMain_BNA.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxCondit).BeginInit();
             groupBoxRes_BNA.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)GridRes).BeginInit();
             SuspendLayout();
             // 
             // groupBoxMain_BNA
             // 
-            groupBoxMain_BNA.Controls.Add(pictureBoxCondit);
+            groupBoxMain_BNA.Controls.Add(textBox6);
+            groupBoxMain_BNA.Controls.Add(textBox5);
+            groupBoxMain_BNA.Controls.Add(textBox4);
+            groupBoxMain_BNA.Controls.Add(textBox3);
+            groupBoxMain_BNA.Controls.Add(textBox2);
+            groupBoxMain_BNA.Controls.Add(textBox1);
             groupBoxMain_BNA.Location = new Point(12, 12);
             groupBoxMain_BNA.Name = "groupBoxMain_BNA";
             groupBoxMain_BNA.Size = new Size(776, 249);
@@ -56,18 +65,9 @@
             groupBoxMain_BNA.TabStop = false;
             groupBoxMain_BNA.Text = "Условие";
             // 
-            // pictureBoxCondit
-            // 
-            pictureBoxCondit.Location = new Point(59, 26);
-            pictureBoxCondit.Name = "pictureBoxCondit";
-            pictureBoxCondit.Size = new Size(639, 218);
-            pictureBoxCondit.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBoxCondit.TabIndex = 0;
-            pictureBoxCondit.TabStop = false;
-            // 
             // groupBoxRes_BNA
             // 
-            groupBoxRes_BNA.Controls.Add(dataGridView1);
+            groupBoxRes_BNA.Controls.Add(GridRes);
             groupBoxRes_BNA.Controls.Add(labelRes_BNA);
             groupBoxRes_BNA.Location = new Point(12, 267);
             groupBoxRes_BNA.Name = "groupBoxRes_BNA";
@@ -76,15 +76,15 @@
             groupBoxRes_BNA.TabStop = false;
             groupBoxRes_BNA.Text = "Вывод";
             // 
-            // dataGridView1
+            // GridRes
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { X, FX, Column1, Column2, Column3 });
-            dataGridView1.Location = new Point(10, 50);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(688, 240);
-            dataGridView1.TabIndex = 2;
+            GridRes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            GridRes.Columns.AddRange(new DataGridViewColumn[] { X, FX, Column1, Column2, Column3 });
+            GridRes.Location = new Point(10, 50);
+            GridRes.Name = "GridRes";
+            GridRes.RowHeadersWidth = 51;
+            GridRes.Size = new Size(688, 240);
+            GridRes.TabIndex = 2;
             // 
             // X
             // 
@@ -148,6 +148,62 @@
             buttonWho_BNA.TabIndex = 7;
             buttonWho_BNA.Text = "?";
             buttonWho_BNA.UseVisualStyleBackColor = true;
+            buttonWho_BNA.Click += buttonWho_BNA_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(10, 26);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(466, 52);
+            textBox1.TabIndex = 0;
+            textBox1.Text = "Дан массив 5 на 5 элементов. Выполнить сортировку по возрастанию в пятом столбце.";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(10, 86);
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(133, 27);
+            textBox2.TabIndex = 1;
+            textBox2.Text = "-2 -13 -15  -9 -17";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(10, 112);
+            textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
+            textBox3.Size = new Size(133, 27);
+            textBox3.TabIndex = 2;
+            textBox3.Text = " 13 -20 -15  27  18";
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(10, 136);
+            textBox4.Name = "textBox4";
+            textBox4.ReadOnly = true;
+            textBox4.Size = new Size(133, 27);
+            textBox4.TabIndex = 3;
+            textBox4.Text = "-12  -1 -20  13   0";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(10, 158);
+            textBox5.Name = "textBox5";
+            textBox5.ReadOnly = true;
+            textBox5.Size = new Size(133, 27);
+            textBox5.TabIndex = 4;
+            textBox5.Text = "15  32  18 -12 -18";
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(10, 181);
+            textBox6.Name = "textBox6";
+            textBox6.ReadOnly = true;
+            textBox6.Size = new Size(133, 27);
+            textBox6.TabIndex = 5;
+            textBox6.Text = "16   5   3  -5  -8";
             // 
             // FormMain
             // 
@@ -165,19 +221,17 @@
             Load += FormMain_Load;
             groupBoxMain_BNA.ResumeLayout(false);
             groupBoxMain_BNA.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxCondit).EndInit();
             groupBoxRes_BNA.ResumeLayout(false);
             groupBoxRes_BNA.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)GridRes).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private GroupBox groupBoxMain_BNA;
-        private PictureBox pictureBoxCondit;
         private GroupBox groupBoxRes_BNA;
-        private DataGridView dataGridView1;
+        private DataGridView GridRes;
         private DataGridViewTextBoxColumn X;
         private DataGridViewTextBoxColumn FX;
         private DataGridViewTextBoxColumn Column1;
@@ -186,5 +240,11 @@
         private Label labelRes_BNA;
         private Button buttonPush;
         private Button buttonWho_BNA;
+        private TextBox textBox2;
+        private TextBox textBox1;
+        private TextBox textBox6;
+        private TextBox textBox5;
+        private TextBox textBox4;
+        private TextBox textBox3;
     }
 }
