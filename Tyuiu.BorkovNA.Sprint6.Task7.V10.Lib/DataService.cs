@@ -4,7 +4,7 @@ using Tyuiu.BorkovNA.Sprint6.Task7.V10.Lib;
 
 namespace Tyuiu.BorkovNA.Sprint6.Task7.V10.Lib
 {
-    public class DataServiceTest : ISprint6Task7V10
+    public class DataService : ISprint6Task7V10
     {
 
         public int[,] GetMatrix(string path)
