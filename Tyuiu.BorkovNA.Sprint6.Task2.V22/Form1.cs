@@ -11,22 +11,29 @@ namespace Tyuiu.BorkovNA.Sprint6.Task2.V22
 
         private void buttonPush_Click(object sender, EventArgs e)
         {
-            
-            DataService ds = new();
-            int start = Convert.ToInt32(textBoxA.Text);
-            int end = Convert.ToInt32(textBoxB.Text);
-
-            int len = ds.GetMassFunction(start, end).Length;
-
-            double[] value = new double[len];
-
-            value = ds.GetMassFunction(start, end);
-
-            for (int i = 0; i < len; i++)
+            try
             {
-                this.dataGridView1.Rows.Add(Convert.ToString(start), Convert.ToString(value[i]));
-                start++;
+                DataService ds = new();
+                double[] res = ds.GetMassFunction(int.Parse(textBoxA.Text), int.Parse(textBoxB.Text));
+                for (int i = 0; i < res.Length; i++)
+                {
+                    dataGridView1.Rows.Add(int.Parse(textBoxA.Text) + i, res[i]);
+                }
             }
+            catch
+            {
+                MessageBox.Show("неверные данные");
+            }
+        }
+
+        private void buttonWho_BNA_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Таск 1 выполнил студент группы Пктб-24-1 Борков Николай Александрович");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
