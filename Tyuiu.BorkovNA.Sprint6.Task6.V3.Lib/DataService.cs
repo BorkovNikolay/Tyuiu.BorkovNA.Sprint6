@@ -13,7 +13,7 @@ namespace Tyuiu.BorkovNA.Sprint6.Task6.V3.Lib
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    if (line.Contains("w"))
+                    if (line.Contains("r"))
                     {
                         resStr = resStr + " " + line;
                     }
